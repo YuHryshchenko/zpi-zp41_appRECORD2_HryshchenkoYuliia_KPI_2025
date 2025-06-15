@@ -1,0 +1,458 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Laboratory report HTML document</title>
+    <style>
+        body {
+          font-family: Arial, sans-serif;
+          margin: 0;
+          padding: 0;
+          display: flex;
+          flex-direction: column;
+          align-items: center;
+          background-color: #f9f9f9;
+        }
+
+        .header {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: 80%;
+            margin-top: 20px;
+        }
+
+        .header .text {
+            text-align: center;
+            flex: 3;
+        }
+
+        .header img {
+            flex: 1;
+            max-width: 150px;
+            border-radius: 50%;
+            border: 2px solid #ccc;
+        }
+
+        h1, h2, h3 {
+            margin: 5px 0;
+        }
+
+        h1 {
+            font-size: 2em;
+            color: #333;
+        }
+
+        h2 {
+            font-size: 1.5em;
+            color: #555;
+        }
+
+        h3 {
+            font-size: 1.2em;
+            color: #777;
+        }
+    
+        .container {
+          display: flex;
+          flex-direction: column;
+          width: 80%;
+          margin-top: 20px;
+          border: 1px solid #ccc;
+          border-radius: 8px;
+          background-color: #fff;
+        }
+    
+        .tabs {
+          display: flex;
+          border-bottom: 1px solid #ccc;
+        }
+    
+        .tab {
+          padding: 10px 20px;
+          cursor: pointer;
+          flex: 1;
+          text-align: center;
+          border-right: 1px solid #ccc;
+          transition: background-color 0.3s;
+        }
+    
+        .tab:last-child {
+          border-right: none;
+        }
+    
+        .tab.active {
+          background-color: #ffcccc;
+          font-weight: bold;
+        }
+    
+        .content {
+          display: none;
+          padding: 20px;
+        }
+    
+        .content.active {
+          display: block;
+        }
+    
+        .sidebar {
+          display: none;
+          flex-direction: column;
+          padding: 10px;
+          border-right: 1px solid #ccc;
+        }
+    
+        .sidebar.active {
+          display: flex;
+        }
+    
+        .sidebar button {
+          margin: 10px 0;
+          padding: 10px;
+          border: 1px solid #ccc;
+          border-radius: 4px;
+          background-color: #f0f0f0;
+          cursor: pointer;
+          text-align: left;
+        }
+    
+        .sidebar button:hover {
+          background-color: #e0e0e0;
+        }
+    
+        .main {
+          flex: 1;
+          padding: 20px;
+        }
+    
+        .layout {
+          display: flex;
+        }
+      </style>
+</head>
+
+<body>
+
+    <div class="header">
+        <div class="text">
+          <h1>ЗВІТИ З ЛАБОРАТОРНИХ РОБІТ</h1>
+          <h2>З ДИСЦИПЛІНИ "ПРОЕКТУВАННЯ WEB-ЗАСТОСУВАНЬ"</h2>
+          <h3>Студента Групи ЗПІ-зп41 Грищенко Юлії Іванівни</h3>
+        </div>
+        <img src="MyPhotoForCV(White).jpg" alt="Фото студента">
+      </div>
+
+    <div class="container">
+        <div class="tabs">
+          <div class="tab active" data-target="lab1">Лабораторна робота № 1.1</div>
+          <div class="tab" data-target="lab2">Лабораторна робота № 1.2</div>
+          <div class="tab" data-target="lab3">Лабораторна робота № 2.1</div>
+          <div class="tab" data-target="lab4">Лабораторна робота № 2.2</div>
+          <div class="tab" data-target="lab5">Лабораторна робота № 3.1</div>
+          <div class="tab" data-target="lab6">Лабораторна робота № 3.2</div>
+        </div>
+    
+        <div class="layout">
+          <div class="sidebar-container">
+            <div id="sidebar-lab1" class="sidebar active">
+              <button data-section="section1">ТЕМА</button>
+              <button data-section="section2">МЕТА</button>
+              <button data-section="section3">ПОСИЛАННЯ</button>
+              <button data-section="section4">ЗАВДАННЯ</button>
+              <button data-section="section9">ВИСНОВКИ</button>
+            </div>
+            <div id="sidebar-lab2" class="sidebar">
+              <button data-section="section1">ТЕМА</button>
+              <button data-section="section2">МЕТА</button>
+              <button data-section="section3">ПОСИЛАННЯ</button>
+              <button data-section="section4">ЗАВДАННЯ</button>
+              <button data-section="section9">ВИСНОВКИ</button>
+            </div>
+            <div id="sidebar-lab3" class="sidebar">
+              <button data-section="section1">ТЕМА</button>
+              <button data-section="section2">МЕТА</button>
+              <button data-section="section3">ПОСИЛАННЯ</button>
+              <button data-section="section4">ЗАВДАННЯ</button>
+              <button data-section="section9">ВИСНОВКИ</button>
+            </div>
+            <div id="sidebar-lab4" class="sidebar">
+              <button data-section="section1">ТЕМА</button>
+              <button data-section="section2">МЕТА</button>
+              <button data-section="section3">ПОСИЛАННЯ</button>
+              <button data-section="section4">ЗАВДАННЯ</button>
+              <button data-section="section9">ВИСНОВКИ</button>
+            </div>
+            <div id="sidebar-lab5" class="sidebar">
+              <button data-section="section1">ТЕМА</button>
+              <button data-section="section2">МЕТА</button>
+              <button data-section="section3">ПОСИЛАННЯ</button>
+              <button data-section="section4">ЗАВДАННЯ №1</button>
+              <button data-section="section5">ЗАВДАННЯ №2</button>
+              <button data-section="section6">ЗАВДАННЯ №3</button>
+              <button data-section="section7">ЗАВДАННЯ №4</button>
+              <button data-section="section8">ЗАВДАННЯ №5</button>
+              <button data-section="section9">ВИСНОВКИ</button>
+            </div>
+            <div id="sidebar-lab6" class="sidebar">
+              <button data-section="section1">ТЕМА</button>
+              <button data-section="section2">МЕТА</button>
+              <button data-section="section3">ПОСИЛАННЯ</button>
+              <button data-section="section4">ЗАВДАННЯ</button>
+              <button data-section="section9">ВИСНОВКИ</button>
+            </div>
+          </div>
+    
+          <div class="main">
+            <div id="lab1" class="content active">
+              <div id="section1">
+                <h2>Тема: СТРУКТУРА HTML-ДОКУМЕНТА. ВИБІР ПРЕДМЕТНОЇ ГАЛУЗІ.<br>РОБОТА З ПОСИЛАННЯМИ, ТАБЛИЦЯМИ, ЗОБРАЖЕННЯМИ, СПИСКАМИ в HTML-ДОКУМЕНТІ.</h2>
+              </div>
+              <div id="section2">
+                <h2>Мета: придбати практичні навички роботи з HTML-документом, таблицями, зображеннями, посиланнями,<br>списками, формами.
+                  Створити шаблон звітного HTML-документа для відображення результатів роботи всіх лабораторних робіт.</h2>
+              </div>
+              <div id="section3">
+                <h3>Посилання на WEB-застосунок:</h3>
+                <ul>
+                    <li> <a href="https://github.com/YuHryshchenko/zpi-zp41_appWEB-HryshchenkoYuliia-KPI-2025">репозиторій на WEB-застосунок</a></li>
+                    <li> <a href="https://yuhryshchenko.github.io/zpi-zp41_appWEB-HryshchenkoYuliia-KPI-2025/">жива сторінка на WEB-застосунок</a></li>
+                </ul>
+                <h3>Посилання на звітний HTML-документ:</h3>
+                <ul>
+                    <li> <a href="https://github.com/YuHryshchenko/zpi-zp41_appRECORD-HryshchenkoYuliia-KPI-2025">репозиторій на звітний HTML-документ</a></li>
+                    <li> <a href="https://yuhryshchenko.github.io/zpi-zp41_appRECORD-HryshchenkoYuliia-KPI-2025/">жива сторінка на звітний HTML-документ</a></li>
+                </ul>
+                <h3>Посилання на самостійні роботи</h3>
+                <ul>
+                    <li> <a href="https://github.com/YuHryshchenko/zpi-zp41_appINDEPENDENT-HryshchenkoYuliia-KPI-2025">репозиторій на самостійні роботи</a></li>
+                    <li> <a href="https://yuhryshchenko.github.io/zpi-zp41_appINDEPENDENT-HryshchenkoYuliia-KPI-2025/">жива сторінка на самостійні роботи</a></li>
+                </ul>
+              </div>
+              <div id="section4">
+                <h3>ЗАВДАННЯ</h3>
+              </div>
+              <div id="section5">
+                <h3>ВИСНОВКИ</h3>
+              </div>
+            </div>
+            <div id="lab2" class="content">
+              <div id="section1">
+                <h2>Тема: КАСКАДНІ ТАБЛИЦІ СТИЛІВ. СЕЛЕКТОРИ. ІДЕНТИФІКАТОРИ.<br>СТИЛЬОВЕ ОФОРМЛЕННЯ ТЕКСТОВИХ ЕЛЕМЕНТІВ У HTML-ДОКУМЕНТАХ.</h2>
+              </div>
+              <div id="section2">
+                <h2>Мета: придбати практичні навички роботи з селекторами: тегів, класів, ідентифікаторів; списками, різноманітними властивостями кольору та фону, оформленням текстових елементів.</h2>
+              </div>
+              <div id="section3">
+                <h3>Посилання</h3>
+              </div>
+              <div id="section4">
+                <h3>ЗАВДАННЯ</h3>
+              </div>
+              <div id="section5">
+                <h3>ВИСНОВКИ</h3>
+              </div>
+            </div>
+            <div id="lab3" class="content">
+              <div id="section1">
+                <h2>Тема: ВЕРСТКА HTML-ДОКУМЕНТУ. БЛОКОВА ВЕРСТКА. ВЕРСТКА ЗАСОБАМИ CSS та FLEXBOX.</h2>
+              </div>
+              <div id="section2">
+                <h2>Мета: придбати практичні навички роботи верстки сторінок засобами CSS, верстки на основі плаваючих елементів, з’ясувати переваги та недоліки типів макетів веб-сторінок. Придбати практичні навички роботи верстки сторінок засобами CSS та FLEXBOX.</h2>
+              </div>
+              <div id="section3">
+                <h3>Посилання</h3>
+              </div>
+              <div id="section4">
+                <h3>ЗАВДАННЯ</h3>
+              </div>
+              <div id="section5">
+                <h3>ВИСНОВКИ</h3>
+              </div>
+            </div>
+            <div id="lab4" class="content">
+              <div id="section1">
+                <h2>Тема: АДАПТИВНА ВЕРСТКА. МЕДІА-ЗАПИТИ. МЕТАТЕГ VIEWPORT.</h2>
+              </div>
+              <div id="section2">
+                <h2>Мета: Адаптивна верстка. Медіа-запити. Медіа-типи. Медіа-функції. Метатег viewport. Інструменти розробника. Стратегія Mobile First.</h2>
+              </div>
+              <div id="section3">
+                <h3>Посилання</h3>
+              </div>
+              <div id="section4">
+                <h3>ЗАВДАННЯ</h3>
+              </div>
+              <div id="section5">
+                <h3>ВИСНОВКИ</h3>
+              </div>
+            </div>
+            <div id="lab5" class="content">
+
+              <div id="section1">
+                <h2>Тема: ФУНКЦІОНАЛЬНЕ ЗАСТОСУВАННЯ JAVASCRIPT У HTML-ДОКУМЕНТІ.<br> ВИКОРИСТАННЯ МАСИВІВ У JAVASCRIPT-СЦЕНАРІЯХ.<br>РЕАЛІЗАЦІЯ ПРОГРАМ ЗАСОВАМИ МОВИ JAVASCRIPT.
+                </h2>
+              </div>
+
+              <div id="section2">
+                <h2>Мета: придбати практичні навички роботи з конструкціями мови JAVASCRIPT, масивами та функціями у JAVASCRIPT-сценаріях. 
+                    Реалізація програм засовами мови JAVASCRIPT.
+                </h2>
+              </div>
+
+              <div id="section3">
+                <h3>Посилання на WEB-застосунок:</h3>
+                <ul>
+                    <li> <a href="https://github.com/YuHryshchenko/zpi-zp41_appWEB-HryshchenkoYuliia-KPI-2025">репозиторій на WEB-застосунок</a></li>
+                    <li> <a href="https://yuhryshchenko.github.io/zpi-zp41_appWEB-HryshchenkoYuliia-KPI-2025/">жива сторінка на WEB-застосунок</a></li>
+                </ul>
+                <h3>Посилання на звітний HTML-документ:</h3>
+                <ul>
+                    <li> <a href="https://github.com/YuHryshchenko/zpi-zp41_appRECORD-HryshchenkoYuliia-KPI-2025">репозиторій на звітний HTML-документ</a></li>
+                    <li> <a href="https://yuhryshchenko.github.io/zpi-zp41_appRECORD-HryshchenkoYuliia-KPI-2025/">жива сторінка на звітний HTML-документ</a></li>
+                </ul>
+              </div>
+
+              <div id="section4">
+                  <h3>ЗАВДАННЯ №1</h3>
+                  <p>Оголоси функцію <code class="codespan" style="color:brown">&lt;getShippingMessage&gt;</code>, яка очікує три параметри, значення яких будуть задаватися під час її виклику:
+                    <ul>
+                      <li><code class="codespan" style="color:brown">&lt;country&gt;</code> — перший параметр, рядок, що містить країну доставки;</li>
+                      <li><code class="codespan" style="color:brown">&lt;price&gt;</code> — другий параметр, число, що містить загальну вартість товару;</li>
+                      <li><code class="codespan" style="color:brown">&lt;deliveryFee&gt;</code> — третій параметр, число, що містить вартість доставки товару</li>
+                    </ul>
+                    Напиcати код функції так, щоб вона повертала рядок з повідомленням про доставку товару в країну користувача:<br>
+                    "Shipping to <code class="codespan" style="color:brown">&lt;country&gt;</code> will cost <code class="codespan" style="color:brown">&lt;totalPrice&gt;</code> credits", де:
+                      <ul>
+                        <li><code class="codespan" style="color:brown">&lt;country&gt;</code> — це країни доставки;</li>
+                        <li><code class="codespan" style="color:brown">&lt;totalPrice&gt;</code> — це загальна вартість замовлення, що включає вартість товару і його доставки.</li>
+                      </ul>
+                  </p>
+                  <pre>
+                  <code>
+                    function getShippingMessage(country, price, deliveryFee) {
+                      // Розраховуємо загальну вартість замовлення
+                      const totalPrice = price + deliveryFee;
+                  
+                      // Формуємо та повертаємо повідомлення
+                      return `Shipping to ${country} will cost ${totalPrice} credits`;
+                    }
+                  
+                    // Приклад використання функції
+                    const message = getShippingMessage('USA', 100, 20);
+                    console.log(message); // "Shipping to USA will cost 120 credits"
+                  </code>
+                  </pre>
+                  <img src="Result_Task1Lab3.1.png" alt="Result Task1Lab3.1">
+              </div>
+
+              <div id="section5">
+                <h3>ЗАВДАННЯ №2</h3>
+                <p>
+                  <h4>Станція з продажу ремонтних дроїдів.</h4>
+                  Оголосити функцію <code class="codespan" style="color:brown">&lt;makeTransaction(quantity, pricePerDroid, customerCredits)&gt;</code>, яка складає та повертає повідомлення про купівлю ремонтних дроїдів.
+                  Вона оголошує три параметри, значення яких будуть задаватися під час її виклику:
+                  <ul>
+                    <li><code class="codespan" style="color:brown">&lt;quantity&gt;</code> — кількість замовлених дроїдів;</li>
+                    <li><code class="codespan" style="color:brown">&lt;pricePerDroid&gt;</code> — ціна одного дроїда;</li>
+                    <li><code class="codespan" style="color:brown">&lt;customerCredits&gt;</code> — сума коштів на рахунку клієнта.</li>
+                  </ul>
+                  Доповни функцію таким чином:
+                  <ul>
+                    <li>Оголоси змінну для зберігання загальної суми замовлення (загальна вартість усіх замовлених дроїдів) та задати їй вираз розрахунку цієї суми;</li>
+                    <li>Додайте перевірку, чи зможе клієнт оплатити замовлення;</li>
+                    <li>Якщо сума до сплати перевищує кількість кредитів на рахунку клієнта, функція має повертати рядок<code class="codespan" style="color:brown">&lt;Insufficient funds!&gt;</code>;</li>
+                    <li>в іншому випадку функція має повертати рядок:<br>
+                      "You ordered <code class="codespan" style="color:brown">&lt;quantity&gt;</code> droids worth <code class="codespan" style="color:brown">&lt;totalPrice&gt;</code> credits!", де
+                      <ul>
+                        <li><code class="codespan" style="color:brown">&lt;quantity&gt;</code> — це кількість замовлених дроїдів;</li>
+                        <li><code class="codespan" style="color:brown">&lt;totalPrice&gt;</code> — це їх загальна вартість.</li>
+                      </ul>
+                    </li>
+                  </ul>
+                </p>
+                <pre>
+                <code>
+                  function makeTransaction(quantity, pricePerDroid, customerCredits) {
+                    // Розраховуємо загальну вартість замовлення
+                    const totalPrice = quantity * pricePerDroid;
+                
+                    // Перевіряємо, чи вистачає коштів у клієнта
+                    if (totalPrice > customerCredits) {
+                        return "Insufficient funds!";
+                    }
+                
+                    // Якщо коштів вистачає, повертаємо повідомлення про успішну покупку
+                    return `You ordered ${quantity} droids worth ${totalPrice} credits!`;
+                  }
+                
+                  // Приклади використання функції
+                  console.log(makeTransaction(3, 500, 2000)); // "You ordered 3 droids worth 1500 credits!"
+                  console.log(makeTransaction(5, 300, 1000)); // "Insufficient funds!"
+                </code>
+                </pre>
+                <img src="Result_Task2Lab3.1.png" alt="Result Task1Lab3.1">
+              </div>
+              <div id="section6">
+                <h3>ЗАВДАННЯ №3</h3>
+              </div>
+              <div id="section7">
+                <h3>ЗАВДАННЯ №4</h3>
+              </div>
+              <div id="section8">
+                <h3>ЗАВДАННЯ №5</h3>
+              </div>
+              <div id="section9">
+                <h3>ВИСНОВКИ</h3>
+              </div>
+            </div>
+            <div id="lab6" class="content">
+              <div id="section1">
+                <h2>Тема: ОБ'ЄКТ. МЕТОДИ ОБ'ЄКТА. МАСИВ ОБ'ЄКТІВ. ДЕСТРУКТУРИЗАЦІЯ ОБ'ЄКТІВ. CALLBACK.<br>СТРІЛОЧНІ ФУНКЦІЇ. СТРІЛОЧНІ ФУНКЦІЇ ЯК КОЛБЕКИ​.</h2>
+              </div>
+              <div id="section2">
+                <h2>Мета: придбати практичні навички роботи з об'єктами. Методи об'єкта. Callback. Стрілочні функції. Стрілочні функції як колбеки​. Реалізація програм засовами мови JAVASCRIPT.</h2>
+              </div>
+              <div id="section3">
+                <h3>Посилання</h3>
+              </div>
+              <div id="section4">
+                <h3>ЗАВДАННЯ</h3>
+              </div>
+              <div id="section5">
+                <h3>ВИСНОВКИ</h3>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    
+      <script>
+        const tabs = document.querySelectorAll('.tab');
+        const contents = document.querySelectorAll('.content');
+        const sidebars = document.querySelectorAll('.sidebar');
+    
+        tabs.forEach(tab => {
+          tab.addEventListener('click', () => {
+            tabs.forEach(t => t.classList.remove('active'));
+            contents.forEach(c => c.classList.remove('active'));
+            sidebars.forEach(s => s.classList.remove('active'));
+    
+            tab.classList.add('active');
+            document.getElementById(tab.dataset.target).classList.add('active');
+            document.getElementById(`sidebar-${tab.dataset.target}`).classList.add('active');
+          });
+        });
+    
+        document.querySelectorAll('.sidebar button').forEach(button => {
+          button.addEventListener('click', () => {
+            const mainContent = button.closest('.content');
+            const targetSection = button.dataset.section;
+            mainContent.querySelectorAll('div[id^="section"]').forEach(section => section.style.display = 'none');
+            mainContent.querySelector(`#${targetSection}`).style.display = 'block';
+          });
+        });
+      </script>
+    
+</body>
+</html>
